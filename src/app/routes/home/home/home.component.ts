@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
      ordersRef: AngularFireList<any>;
      orderObservable:Observable<any>;
 
-     datePipeEn: DatePipe = new DatePipe('fr-FR')
+     datePipeEn: DatePipe = new DatePipe('en-US')
     constructor(private colors: ColorsService, private http: Http, public af :AngularFireDatabase, @Inject(LOCALE_ID) private _locale: string) {
      
      af.list('/menuItems').valueChanges().subscribe((res)=>{

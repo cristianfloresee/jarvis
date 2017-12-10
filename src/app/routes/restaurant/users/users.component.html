@@ -1,23 +1,23 @@
-<div class="content-heading">Users Detail
+<div class="content-heading">Detalles de Usuarios
     <div class="pull-right">
         <label class="file-upload">
             <a [routerLink]="'/users/addUser'">
-                <button class="btn btn-warning"><em class="fa fa-plus"></em>&nbsp;&nbsp; Add New User</button>
+                <button class="btn btn-warning"><em class="fa fa-plus"></em>&nbsp;&nbsp; Agregar Nuevo Usuario</button>
             </a>
         </label>
     </div>
-    <small><a [routerLink]=" ['/home'] ">Dashboard</a> -> Users Detail</small>
+    <small><a [routerLink]=" ['/home'] ">Dashboard</a> -> Detalles de Usuarios</small>
 </div>
 <!-- Zero Configuration-->
 <div class="panel panel-default">
-    <div class="panel-heading">All Users Information</div>
+    <div class="panel-heading">Toda la Información de Usuarios</div>
     <div class="panel-body">
         <div class="table-responsive customTable">
             <table class="table table-striped" [mfData]="users" #mf="mfDataTable" [mfRowsOnPage]="5">
                 <thead>
                 <tr>
                     <th class="thsearch text-center">
-                        <mfDefaultSorter by="siteName">Name</mfDefaultSorter>
+                        <mfDefaultSorter by="siteName">Nombre</mfDefaultSorter>
                     </th>
                     <th class="thsearch text-center">
                         <mfDefaultSorter by="siteName">Email</mfDefaultSorter>
