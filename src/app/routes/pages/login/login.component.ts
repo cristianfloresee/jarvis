@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(private _cookieService: CookieService, public af: AngularFireAuth, public settings: SettingsService, fb: FormBuilder, public router: Router, public db: AngularFireDatabase, public toastr: ToastrService) //,public toastr: ToastrService
   {
     this.valForm = fb.group({
-      'email': ['admin@gmail.com', Validators.compose([Validators.required, CustomValidators.email])],
+      'email': ['admin@admin.com', Validators.compose([Validators.required, CustomValidators.email])],
       'password': ['123456', Validators.required]
     });
 

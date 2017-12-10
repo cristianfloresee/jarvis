@@ -1,5 +1,9 @@
 <div class="wrapper">
     <div class="block-center mt-xl wd-xl">
+
+        <br>
+        <br>
+        <br>
         <!-- START panel-->
         <div class="panel panel-dark panel-flat">
 
@@ -9,7 +13,7 @@
             </div>
 
             <div class="panel-body">
-                <p class="text-center pv">Inicie sesión para continuar.</p>
+                <p class="text-center pv">Inicie sesión para continuar</p>
                 <form [formGroup]="valForm" class="form-validate mb-lg" role="form" name="registerForm" novalidate=""
                       (submit)="submitForm($event, valForm.value)">
                     <div class="form-group has-feedback">
@@ -40,6 +44,8 @@
                     </div>
                     <button class="btn btn-block btn-success mt-lg" type="submit">INGRESAR</button>
                 </form>
+                <!--<p class="pt-lg text-center">¿Desea Crear una Cuenta?</p><a class="btn btn-block btn-info"
+                [routerLink]="'/register'">REGISTRARSE</a>-->
             </div>
         </div>
         <!-- END panel-->

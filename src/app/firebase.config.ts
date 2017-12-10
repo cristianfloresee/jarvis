@@ -1,19 +1,20 @@
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyA9tJ1p8iDcYy6tLoOisnr4zXFbS8aHEag",
-  authDomain: "restaurant-1440e.firebaseapp.com",
-  databaseURL: "https://restaurant-1440e.firebaseio.com",
-  storageBucket: "restaurant-1440e.appspot.com",
-  messagingSenderId: "314198464457"
-
+  apiKey: "AIzaSyD0y_9JV-rto4w6eQYGJkIaTewRZ54lX1k",
+  authDomain: "sistema-de-emergencias.firebaseapp.com",
+  databaseURL: "https://sistema-de-emergencias.firebaseio.com",
+  projectId: "sistema-de-emergencias",
+  storageBucket: "sistema-de-emergencias.appspot.com",
+  messagingSenderId: "261878397753"
 };
 
 export const firebaseConfigTwo = {
-  apiKey: "AIzaSyA9tJ1p8iDcYy6tLoOisnr4zXFbS8aHEag",
-  authDomain: "restaurant-1440e.firebaseapp.com",
-  databaseURL: "https://restaurant-1440e.firebaseio.com",
-  storageBucket: "restaurant-1440e.appspot.com",
-  messagingSenderId: "314198464457"
+  apiKey: "AIzaSyD0y_9JV-rto4w6eQYGJkIaTewRZ54lX1k",
+  authDomain: "sistema-de-emergencias.firebaseapp.com",
+  databaseURL: "https://sistema-de-emergencias.firebaseio.com",
+  projectId: "sistema-de-emergencias",
+  storageBucket: "sistema-de-emergencias.appspot.com",
+  messagingSenderId: "261878397753"
 
 };
 
