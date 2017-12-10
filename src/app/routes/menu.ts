@@ -24,7 +24,7 @@ const Orders = {
 };
 
 const Users = {
-    text: 'Users',
+    text: 'Usuarios',
     link: '/users/manageUsers',
     icon: 'fa fa-users'
 };
@@ -34,12 +34,12 @@ const Chat = {
     link:'/chat',
     icon: 'fa fa-comments-o'
 };
-
+/*
 const Setting = {
     text: 'Setting',
     link:'/setting',
     icon: 'fa fa-cog'
-};
+};*/
 
 const Tags = {
     text: 'Tags',
@@ -150,7 +150,7 @@ export const menu = [
     pushNotification,
     News,
     Business,
-    Setting,
+    //Setting,
     Chat
     //Pages
 ];

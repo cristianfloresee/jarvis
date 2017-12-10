@@ -17,6 +17,7 @@ export class NowDirective implements OnInit, OnDestroy {
     }
 
     updateTime() {
+        moment.locale('es');
         let dt = moment().format(this.format);
         this.element.nativeElement.innerHTML = dt;
     }
