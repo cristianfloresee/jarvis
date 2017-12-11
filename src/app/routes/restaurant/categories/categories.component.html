@@ -1,24 +1,24 @@
-<div class="content-heading">Categories
+<div class="content-heading">Categorías
 <div class="pull-right">
             <label class="file-upload">
-              <a [routerLink]="'/categories/addCategory'">  <button class="btn btn-warning"><em class="fa fa-plus"></em>&nbsp;&nbsp; Add New Category</button> </a>  
+              <a [routerLink]="'/categories/addCategory'">  <button class="btn btn-warning"><em class="fa fa-plus"></em>&nbsp;&nbsp; Agregar Nueva Categoría</button> </a>  
             </label>
  </div><br/><br/>
-<small><a [routerLink]=" ['/home'] ">Dashboard</a>  ->  Categories</small>
+<small><a [routerLink]=" ['/home'] ">Dashboard</a>  ->  Categorías</small>
 </div>
 
 <div class="panel panel-default">
-<div class="panel-heading">Categories Details</div>
+<div class="panel-heading">Toda la Información de Usuarios</div>
   <div class="table-responsive b0 customTable">
     <table class="table table-striped" [mfData]="categories" #mf="mfDataTable" [mfRowsOnPage]="5">
         <thead>
         <tr>
             <th class="thsearch text-center">
-                <mfDefaultSorter by="siteName">Name</mfDefaultSorter>
+                <mfDefaultSorter by="siteName">Nombre</mfDefaultSorter>
                 <form (keyup)="getCategory(siteName.value)">
                     <input class="form-control searchinput" type="text" name="siteVal"
                            id="siteVal" [(ngModel)]="siteVal"
-                           placeholder="Search" #siteName>
+                           placeholder="Buscar" #siteName>
                 </form>
             </th>
             <th class="thnosearch text-center">

@@ -6,13 +6,13 @@ const Home = {
 };
 
 const Categories = {
-    text: 'Categories',
+    text: 'Categorías',
     link: '/categories/manageCategories',
     icon: 'icon-note'
 
 };
 const Menu = {
-    text: 'Menu Items',
+    text: 'Organizaciones',
     link: '/menu/manageItems',
     icon: 'fa fa-th-list'
 };
@@ -64,7 +64,7 @@ const Coupons = {
 };
 
 const pushNotification = {
-    text: 'Push Notification',
+    text: 'Alerta Roja',
     link: '/pushNotification',
     icon: 'fa fa-briefcase'
 };

@@ -1,6 +1,6 @@
 <div class="content-heading">Vista de Usuario
 <small>
-        <a [routerLink]="['/users/manageUsers']"> Detalles de Usuarios  </a>->
+        <a [routerLink]="['/users/manageUsers']"> Usuarios  </a>->
             Vista de Usuario
  </small>
  </div>
@@ -13,10 +13,10 @@
                      <div class="col-lg-8">
                      <div class="row">
                     <div class="col-lg-5">
-                        <h4 class="media-heading">Name</h4>
+                        <h4 class="media-heading">Nombre Completo:</h4>
                     </div>
                     <div class="col-lg-6">
-                        <p>{{userDetails.name}}</p>
+                        <p>{{userDetails.name}} {{userDetails.name2}} {{userDetails.ape_paterno}} {{userDetails.ape_materno}}</p>
                     </div>
                     </div>
                     </div>
@@ -24,7 +24,7 @@
                      <div class="row">
 
                     <div class="col-lg-5">
-                        <h4 class="media-heading">Email</h4>
+                        <h4 class="media-heading">Correo Electrónico:</h4>
                     </div>
                     <div class="col-lg-6">
                         <p>{{userDetails.email}}</p>
@@ -34,7 +34,7 @@
                      <div class="col-lg-8">
                      <div class="row">
                     <div class="col-lg-5">
-                        <h4 class="media-heading">Mobile Number</h4>
+                        <h4 class="media-heading">Teléfono Celular:</h4>
                     </div>
                     <div class="col-lg-6">
                         <p>{{userDetails.mobileNo}}</p>

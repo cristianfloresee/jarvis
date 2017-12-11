@@ -1,63 +1,71 @@
-<div class="content-heading">Detalles de Usuarios
-    <div class="pull-right">
-        <label class="file-upload">
-            <a [routerLink]="'/users/addUser'">
-                <button class="btn btn-warning"><em class="fa fa-plus"></em>&nbsp;&nbsp; Agregar Nuevo Usuario</button>
-            </a>
-        </label>
-    </div>
-    <small><a [routerLink]=" ['/home'] ">Dashboard</a> -> Detalles de Usuarios</small>
+<div class="content-heading">Usuarios
+  <div class="pull-right">
+    <label class="file-upload">
+      <a [routerLink]="'/users/addUser'">
+        <button class="btn btn-warning">
+          <em class="fa fa-plus"></em>&nbsp;&nbsp; Agregar Nuevo Usuario</button>
+      </a>
+    </label>
+  </div>
+  <small>
+    <a [routerLink]=" ['/home'] ">Dashboard</a> -> Usuarios</small>
 </div>
 <!-- Zero Configuration-->
 <div class="panel panel-default">
-    <div class="panel-heading">Toda la Información de Usuarios</div>
-    <div class="panel-body">
-        <div class="table-responsive customTable">
-            <table class="table table-striped" [mfData]="users" #mf="mfDataTable" [mfRowsOnPage]="5">
-                <thead>
-                <tr>
-                    <th class="thsearch text-center">
-                        <mfDefaultSorter by="siteName">Nombre</mfDefaultSorter>
-                    </th>
-                    <th class="thsearch text-center">
-                        <mfDefaultSorter by="siteName">Email</mfDefaultSorter>
-                    </th>
-                    <th class="thsearch text-center">
-                        <mfDefaultSorter by="siteName">Mobile Number</mfDefaultSorter>
-                    </th>
-                    <th class="thnosearch  text-center">
-                        <mfDefaultSorter>View</mfDefaultSorter>
-                    </th>
-                    <th class="thnosearch  text-center">
-                        <mfDefaultSorter>Delete</mfDefaultSorter>
-                    </th>
+  <div class="panel-heading">Toda la Información de Usuarios</div>
+  <div class="panel-body" style="padding-left: 0px; padding-right: 0px;">
+    <div class="table-responsive customTable" style="margin-right: 0px;">
+      <table class="table table-striped" [mfData]="users" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+          <tr>
+            <th style="padding-left: 20px;" class="thsearch">
+              <mfDefaultSorter by="siteName">Nombre</mfDefaultSorter>
+            </th>
+            <th style="padding-left: 10px;" class="thnosearch">
+              <mfDefaultSorter>RUT</mfDefaultSorter>
+            </th>
+            <th style="padding-left: 10px;" class="thsearch">
+              <mfDefaultSorter by="siteName">Cargo</mfDefaultSorter>
+            </th>
+            <th style="padding-left: 10px;" class="thsearch">
+              <mfDefaultSorter by="siteName">Organización</mfDefaultSorter>
+            </th>
+            <th class="thnosearch  text-center">
+              <mfDefaultSorter>Detalle</mfDefaultSorter>
+            </th>
+            <th class="thnosearch  text-center">
+              <mfDefaultSorter>Eliminar</mfDefaultSorter>
+            </th>
+            <!--<th class="thnoitem"></th>-->
 
-                    <th class="thnoitem"></th>
-                </tr>
-                </thead>
-                <tbody *ngFor="let item of mf.data">
-                <tr class=" text-center" *ngIf="item.role != 'Admin'">
-                    <td>{{item.name}}
-                    <td>{{item.email}}</td>
-                    <td>{{item.mobileNo}}</td>
-                    <td>
-                        <button class="btn btn-sm btn-default" type="button" (click)="usersShow(item.key)"><em
-                                class="fa fa-search"></em></button>
-                    </td>
-                    <td>
-                        <button class="btn btn-sm btn-danger" type="button" (click)="usersDelete(item.key)"><em
-                                class="fa fa-trash-o"></em></button>
-                    </td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <td colspan="5">
-                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-                    </td>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of mf.data">
+          <tr *ngIf="item.role != 'Admin'">
+            <td style="padding-left: 20px;">{{item.name}} {{item.name2}} {{item.ape_paterno}} {{item.ape_materno}}</td>
+              <td>18.313.961-4</td>
+              <td>{{item.email}}</td>
+              <td>{{item.mobileNo}}</td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-default" type="button" (click)="usersShow(item.key)">
+                  <em class="fa fa-search"></em>
+                </button>
+              </td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-danger" type="button" (click)="usersDelete(item.key)">
+                  <em class="fa fa-trash-o"></em>
+                </button>
+              </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
+  </div>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { NgForm } from '@angular/forms';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import { firebaseConfig } from '../../../../firebase.config';
@@ -14,14 +15,32 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddUserComponent {
 
+  categories: Array<any>
+  categoryDataRef: AngularFireList<any>;
+  categoryObservable: Observable<any>;
+  menuItemsDataRef: AngularFireList<any>;
+  imageId: string;
+
+
   userDetails: any = {};
   public fireUid: any;
   constructor(private route: ActivatedRoute,
     public router: Router,
     public af: AngularFireDatabase,
     public authentication: AngularFireAuth,
-    public toastr: ToastrService) {
+    public toastr: ToastrService
+  ) {
 
+    this.categoryDataRef = af.list('/categories');
+
+    this.categoryObservable = this.categoryDataRef.snapshotChanges().map(changes => {
+      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+    });;
+    this.categoryObservable.subscribe((response) => {
+      this.categories = response
+    })
+
+    
     this.af.object('/users');
   }
   onAddUsers(form: NgForm) {
@@ -50,6 +69,9 @@ export class AddUserComponent {
         this.af.object('/users/' + res.uid).update({
           email: this.userDetails.email,
           name: this.userDetails.name,
+          name2: this.userDetails.name2,
+          ape_paterno: this.userDetails.ape_paterno,
+          ape_materno: this.userDetails.ape_materno,
           mobileNo: this.userDetails.mobileNo,
           role: 'User'
         }).then(response => {
