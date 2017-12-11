@@ -71,7 +71,7 @@
 <!-- Chart JS start -->
 <div class="row">
     <div class="col-lg-8" *ngIf="barData.datasets[0].data.length == 7">
-        <h4>Product Sales Report</h4>
+        <h4>Reporte de Incendios</h4>
         <div>
             <canvas baseChart [chartType]="'bar'" [options]="barOptions" [datasets]="barData.datasets"
                     [colors]="barColors" [labels]="barData.labels" [legend]="false" height="150"></canvas>
@@ -85,4 +85,9 @@
                     [colors]="pieColors" [labels]="pieData.labels" [legend]="false" height="200"></canvas>
         </div>
     </div>
+</div>
+<div>
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
 </div>

@@ -19,6 +19,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {firebaseConfig} from './firebase.config';
 import {firebaseConfigTwo} from './firebase.config';
 
+
+
 // https://github.com/ocombe/ng2-translate/issues/218
 
 
@@ -38,7 +40,8 @@ import {firebaseConfigTwo} from './firebase.config';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireModule.initializeApp(firebaseConfigTwo),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
