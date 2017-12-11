@@ -17,7 +17,6 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {firebaseConfig} from './firebase.config';
-import {firebaseConfigTwo} from './firebase.config';
 
 
 
@@ -38,7 +37,6 @@ import {firebaseConfigTwo} from './firebase.config';
     RoutesModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireModule.initializeApp(firebaseConfigTwo),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     

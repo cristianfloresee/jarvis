@@ -31,7 +31,7 @@ export class CouponsComponent{
   couponDelete(key:any){
     swal({
             title: 'Are you sure?',
-            text: 'Your will not be able to recover this data!',
+            text: 'No podrá recuperar esta información',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#DD6B55',

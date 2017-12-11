@@ -32,22 +32,22 @@ userObservable:Observable<any>;
 
    usersDelete(key:any){
     swal({
-            title: 'Are you sure?',
-            text: 'Your will not be able to recover this data!',
+            title: '¿Está seguro?',
+            text: 'No podrá recuperar esta información',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#DD6B55',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'Cancelar',
             closeOnConfirm: false,
             closeOnCancel: false
         }, (isConfirm) => {
             if (isConfirm) {
                this.usersDataRef.remove(key).then((res)=>{
-                   swal('Deleted!','User Deleted Successfully!', 'success');
+                   swal('Registro Eliminado','Usuario eliminado correctamente!', 'success');
                  })
               } else {
-                swal('Cancelled', 'Your data is safe :)', 'error');
+                swal('Anulado', 'El usuario no ha sido eliminado!', 'error');
             }
         });
   }
