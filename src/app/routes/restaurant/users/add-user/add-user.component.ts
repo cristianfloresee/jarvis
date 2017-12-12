@@ -18,9 +18,6 @@ export class AddUserComponent {
   categories: Array<any>
   categoryDataRef: AngularFireList<any>;
   categoryObservable: Observable<any>;
-  menuItemsDataRef: AngularFireList<any>;
-  imageId: string;
-
 
   userDetails: any = {};
   public fireUid: any;
@@ -37,7 +34,8 @@ export class AddUserComponent {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });;
     this.categoryObservable.subscribe((response) => {
-      this.categories = response
+      this.categories = response;
+      console.log("categorias: ", this.categories);
     })
 
     
@@ -68,16 +66,17 @@ export class AddUserComponent {
 
         this.af.object('/users/' + res.uid).update({
           email: this.userDetails.email,
+          category: this.userDetails.category,
           name: this.userDetails.name,
           name2: this.userDetails.name2,
           ape_paterno: this.userDetails.ape_paterno,
           ape_materno: this.userDetails.ape_materno,
           mobileNo: this.userDetails.mobileNo,
-          role: 'User'
+          role: 'User',
         }).then(response => {
           console.log("response: ", response);
           //secondaryApp.auth().signOut();  
-          this.toastr.success('Usuario Registrado Correctamente !', 'Registro Exitoso!');
+          this.toastr.success('Usuario Registrado Correctamente!', 'Registro Exitoso!');
           this.router.navigate(['/users/manageUsers'])
         }).catch(error => {
           console.log("error: ", error);

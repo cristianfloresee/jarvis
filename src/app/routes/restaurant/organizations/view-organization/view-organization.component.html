@@ -1,0 +1,40 @@
+<div class="content-heading">Detalle de División
+  <small><a [routerLink]=" ['/home'] ">Dashboard</a> ->
+         <a [routerLink]="['/organizations/manageOrganizations']"> Divisiones </a>->
+             Detalle de División
+  </small>
+  </div>
+ <div class="col-masonry">
+         <div class="panel b m0">
+             <div class="panel-heading">
+             </div>
+             <div class="panel-body">
+                 <div class="row">
+                     <div class="col-lg-4 text-center mb-lg">
+                         <a>
+                             <img class="img-responsive img-thumbnail" src="{{categoryDetails.thumb}}" alt="Image" />
+                         </a>
+                     </div>
+                     <div class="col-lg-8">
+                     <div class="col-lg-3">
+                         <h4 class="media-heading">Nombre</h4>
+                     </div>
+                     <div class="col-lg-5">
+                         <p>{{categoryDetails.nombre}}</p>
+                     </div>
+                     </div>
+                     <div class="col-lg-8">
+                     <div class="col-lg-3">
+                         <h4 class="media-heading">Institución</h4>
+                     </div>
+                     <div class="col-lg-5">
+                         <p>{{categoryDetails.institucion_id}}</p>
+                     </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="panel-body">
+             </div>
+         </div>
+     </div>
+ 

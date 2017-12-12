@@ -18,7 +18,8 @@ export class ViewItemComponent {
   categoryObservable:Observable<any>;
   
   constructor(private route: ActivatedRoute,  public router: Router, public af: AngularFireDatabase) {
-  	 	this.route.params.map(params => params['id']).subscribe((Id) => {
+       
+    this.route.params.map(params => params['id']).subscribe((Id) => {
     	 	if(Id != null) {
           this.menuItemsdataRef = this.af.object('/menuItems/' + Id);
           this.menuItemObservable = this.menuItemsdataRef.valueChanges();

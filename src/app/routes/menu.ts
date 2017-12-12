@@ -6,9 +6,16 @@ const Home = {
 };
 
 const Categories = {
-    text: 'Categorías',
+    text: 'Instituciones',
     link: '/categories/manageCategories',
     icon: 'icon-note'
+
+};
+
+const Organizations = {
+  text: 'Divisiones',
+  link: '/organizations/manageOrganizations',
+  icon: 'icon-note'
 
 };
 const Menu = {
@@ -142,6 +149,7 @@ const headingMore = {
 export const menu = [
     Home,
     Categories,
+    Organizations,
     Menu,
     Orders,    
     Coupons,

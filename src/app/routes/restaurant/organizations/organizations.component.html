@@ -1,33 +1,33 @@
-<div class="content-heading">Instituciones
+<div class="content-heading">Divisiones
   <div class="pull-right">
     <label class="file-upload">
-      <a [routerLink]="'/categories/addCategory'">
+      <a [routerLink]="'/organizations/addOrganization'">
         <button class="btn btn-warning">
-          <em class="fa fa-plus"></em>&nbsp;&nbsp; Registrar Institución</button>
+          <em class="fa fa-plus"></em>&nbsp;&nbsp; Registrar División</button>
       </a>
     </label>
   </div>
   <br/>
   <br/>
   <small>
-    <a [routerLink]=" ['/home'] ">Dashboard</a> -> Instituciones</small>
+    <a [routerLink]=" ['/home'] ">Dashboard</a> -> Divisiones</small>
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Información de Instituciones</div>
+  <div class="panel-heading">Información de Divisiones</div>
   <div class="table-responsive b0 customTable" style="margin-right: 0px;">
     <table class="table table-striped" [mfData]="categories" #mf="mfDataTable" [mfRowsOnPage]="5">
       <thead>
         <tr>
           <th class="thsearch text-center">
-            <mfDefaultSorter by="siteName">Nombre</mfDefaultSorter>
+            <mfDefaultSorter by="siteName">División</mfDefaultSorter>
             <form (keyup)="getCategory(siteName.value)">
               <input class="form-control searchinput" type="text" name="siteVal" id="siteVal" [(ngModel)]="siteVal" placeholder="Buscar"
                 #siteName>
             </form>
           </th>
           <th class="thnosearch text-center">
-            <mfDefaultSorter>Divisiones</mfDefaultSorter>
+            <mfDefaultSorter>Institución</mfDefaultSorter>
           </th>
           <th class="thnosearch text-center">
             <mfDefaultSorter>Editar</mfDefaultSorter>
@@ -42,8 +42,8 @@
       </thead>
       <tbody>
         <tr class=" text-center" *ngFor="let item of mf.data">
-          <td>{{item.title}}</td>
-          <td>10</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.institucion_nombre}}</td>
           <td>
             <button class="btn btn-sm btn-primary" type="button" (click)="categoryEdit(item.key)">
               <em class="fa fa-pencil"></em>
@@ -59,7 +59,6 @@
               <em class="fa fa-search"></em>
             </button>
           </td>
-
         </tr>
       </tbody>
       <tfoot>

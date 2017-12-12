@@ -1,3 +1,7 @@
+import { ViewOrganizationComponent } from './restaurant/organizations/view-organization/view-organization.component';
+import { EditOrganizationComponent } from './restaurant/organizations/edit-organization/edit-organization.component';
+import { AddOrganizationComponent } from './restaurant/organizations/add-organization/add-organization.component';
+import { OrganizationsComponent } from './restaurant/organizations/organizations.component';
 import {NgModule} from '@angular/core';
 import { LayoutComponent } from '../layout/layout.component';
 
@@ -82,6 +86,15 @@ export const routes = [
                 ]
             },
 
+            {
+              path: 'organizations',
+              children: [
+                  {path: 'manageOrganizations', component: OrganizationsComponent, canActivate: [AuthService]},
+                  {path: 'addOrganization', component: AddOrganizationComponent, canActivate: [AuthService]},
+                  {path: 'editOrganization/:id', component: EditOrganizationComponent, canActivate: [AuthService]},
+                  {path: 'viewOrganization/:id', component: ViewOrganizationComponent, canActivate: [AuthService]}
+              ]
+          },
 
             {
                 path: 'news',

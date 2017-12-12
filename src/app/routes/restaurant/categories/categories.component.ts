@@ -59,22 +59,22 @@ public categoryData: Observable<any>;
 
 categoryDelete(key:any,i:any){
    swal({
-            title: 'Are you sure?',
-            text: 'Your will not be able to recover this imaginary file!',
+            title: '¿Está seguro?',
+            text: 'No podrá recuperar esta información',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#DD6B55',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel!',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'Cancelar',
             closeOnConfirm: false,
             closeOnCancel: false
         }, (isConfirm) => {
             if (isConfirm) {              
               this.catRef.remove(key).then(resp=>{
-                swal('Deleted!','Categories Data Deleted Successfully!', 'success');               
+                swal('Institución Eliminado','Institución eliminada correctamente!', 'success');              
               })               
               } else {
-                swal('Cancelled', 'Your data is safe :)', 'error');
+                swal('Anulado', 'La institución no ha sido eliminada!', 'error');
             }
         });
   }

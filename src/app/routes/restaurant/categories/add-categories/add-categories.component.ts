@@ -50,7 +50,7 @@ export class AddCategoriesComponent  {
             let res: any = JSON.parse(response);
           this.category.thumb = res.url;
     	  this.categoryRef.push(this.category).then((res)=>{
-           this.toastr.success('Categories Data Added Successfully!', 'Success!');
+           this.toastr.success('Entidad Registrada Correctamente!', 'Registro Exitoso!');
           this.router.navigate(['/categories/manageCategories']);
         });
       }

@@ -44,6 +44,11 @@ import { ChatComponent } from './chat/chat.component';
 import { ChatBoxComponent } from './chat/chat-box/chat-box.component';
 import { StoreModule } from '@ngrx/store';
 import {chatData} from "./chat/action";
+import { OrganizationsComponent } from './organizations/organizations.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { AddOrganizationComponent } from './organizations/add-organization/add-organization.component';
+import { EditOrganizationComponent } from './organizations/edit-organization/edit-organization.component';
+import { ViewOrganizationComponent } from './organizations/view-organization/view-organization.component';
 
 
 @NgModule({
@@ -85,7 +90,12 @@ import {chatData} from "./chat/action";
         ChatBoxComponent,
         UsersComponent,
         ViewUserComponent,
-        AddUserComponent
+        AddUserComponent,
+        OrganizationsComponent,
+        EditUserComponent,
+        AddOrganizationComponent,
+        EditOrganizationComponent,
+        ViewOrganizationComponent
     ],
     providers: [
         AuthService,

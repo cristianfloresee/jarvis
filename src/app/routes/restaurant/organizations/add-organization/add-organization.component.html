@@ -1,0 +1,63 @@
+<div class="content-heading ">
+  Registrar División
+  <small>
+    <a [routerLink]=" ['/home'] ">Dashboard</a> ->
+    <a [routerLink]="['/organizations/manageOrganizations']"> Divisiones </a>-> Registrar División
+  </small>
+</div>
+<div class="container-md">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-9">
+      <div class="panel b">
+        <div class="panel-heading  text-bold bg-purple-dark">Registrar División</div>
+        <div class="panel-body">
+          <form (ngSubmit)="onSubmitCategory(f)" #f="ngForm">
+            <div class="form-group col-md-6">
+              <label>Nombre*</label>
+              <input class="form-control" type="text" required name="nombre" id="nombre" [(ngModel)]="category.nombre" placeholder="Ingrese Nombre"/>
+            </div>
+           
+            <div class="form-group col-md-6">
+              <label>Institución*</label>
+              <select class="form-control" name="institución" id="institución" [(ngModel)]="category.id_institucion">
+                <option *ngFor="let category of categories" value="{{category.key}}">
+                  {{category.title}}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Dirección*</label>
+              <input class="form-control" type="text" required name="dirección" id="dirección" [(ngModel)]="category.direccion" placeholder="Ingrese Dirección"/>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Teléfono*</label>
+              <input class="form-control" type="text" required name="telefono" id="telefono" [(ngModel)]="category.telefono" placeholder="Ingrese Teléfono"/>
+            </div>
+
+            <div class="row form-group" style="padding-left: 15px;">
+              <div class="col-md-4">
+                <div class=" fileUpload btn btn-primary choose-btn">
+                  <span>
+                    <i class="fa fa-upload" aria-hidden="true"></i> &nbsp; Cargar Imagen</span>
+                  <input type="file" class="upload" ng2FileSelect [uploader]="uploader" accept="image/*" (change)="readUrl($event)">
+                </div>
+              </div>
+              <div class="col-md-6" [hidden]="url ==''">
+                <img class="media-object img-thumbnail thumb96" [src]="url" alt="Image" />
+              </div>
+              <!--COL-->
+            </div>
+            <button class="btn btn-danger pull-right s-n-btn" (click)="cancel()">Cancelar</button>
+            <button class="btn btn-primary pull-right s-n-btn" type="submit">Registrar</button>
+            <p style="padding-left: 15px;">
+              <small class="text-muted">* Campos Requeridos</small>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
